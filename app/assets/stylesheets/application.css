@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ /* place css here */
+ .parallax-container {
+   height: 400px;
+ }

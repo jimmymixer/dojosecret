@@ -15,4 +15,5 @@ class User < ActiveRecord::Base
   def email_downcase
     self.email.downcase
   end
+  
 end

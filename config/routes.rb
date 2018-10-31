@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get '' => 'sessions#new' # homepage LOG IN
+# ------------------ sessions ---------------------
+
+  # get '' => 'sessions#new' # homepage LOG IN
 
   get 'sessions/new' => 'sessions#new'
 
@@ -8,10 +10,14 @@ Rails.application.routes.draw do
 
   delete 'sessions/:id' => 'sessions#destroy'
 
-  # ---------------------------------------
+# -------------------- users -------------------
+
+  get '' => 'users#new' # homepage Register
 
   get 'users/new' => 'users#new'  # sent from sessions/index
+
   get 'users/:id' => 'users#index' # users homepage not index
+
   post 'users' => 'users#create' # create new user
 
 # ---------------------------------------

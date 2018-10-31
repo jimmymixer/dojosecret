@@ -1,24 +1,65 @@
-<h2>show/index/page</h2>
-<p> Welcome <%= current_user.name %></p>
-<p> <a href="/secrets"> Secrets Page</a> </p>
-<h3>Create Secret</h3>
-<form  action="/secrets" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <textarea name="secret" rows="8" cols="80"></textarea>
-    <input type="submit" name="" value="Create Secret">
-</form>
-<h3>Secrets</h3>
-<% current_user.secrets.each do |item| %>
-    <p><%= item.secret %>
-        <form action="/secrets/<%= item.id %>" method="post">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <input type="hidden" name="_method" value="delete">
-            <input type="submit" name="delete" value="delete">
+<!-- Users Dashboard -->
+<div class="userIndex">
+  <!-- White box opacity -->
+  <div class="main">
+    <div style="margin:30px;display:block;">
+      <% if current_user %>
+        <form action="/sessions/<%= current_user.id %>" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" class="ghost-button2" name="logout" value="Logout">
         </form>
-    </p>
-    <p><%= item.likes.count %> Likes</p>
-<% end %>
-<h3>Secrets Liked</h3>
-<% current_user.secrets_liked.each do |item| %>
-    <p><%= item.secret %></p>
-<% end %>
+      <% end %>
+    </div>
+    <div class="row section">
+      <div class="container">
+        <h1 class="header center black-text text-lighten-2 title">Secrets</h1>
+        <div class="row section">
+          <div class="container">
+            <h4 style="color:#111011;">Your Dashboard</h4>
+            <p class="dashboard"><%= current_user.name %></p>
+            <p> <a href="/secrets"> Click here to see other Secrets</a> </p>
+          </div>
+        </div>
+        <!-- Add a Secret -->
+        <div class="row section">
+          <div class="container">
+            <h3 style="color:#111011;">Create Secret</h3>
+            <form class="secret-form" action="/secrets" method="post">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <textarea class="textArea" name="secret" rows="8" cols="80"></textarea><br><br>
+              <input type="submit" class="ghost-button2" style="float:left;" name="" value="Create Secret">
+            </form>
+          </div>
+        </div>
+        <!-- Each Secret listed with a Like and Delete -->
+        <div class="row section">
+          <div class="container">
+            <table>
+              <% current_user.secrets.each do |item| %>
+                <tr>
+                  <td class="mySecret">My Secret: <%= item.secret %> <span class="likes">     <%= item.likes.count %> Likes</span></td>
+                  <td style="float: right;">
+                    <form action="/secrets/<%= item.id %>" method="post">
+                      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                      <input type="hidden" name="_method" value="delete">
+                      <input type="submit" class="ghost-button2" style="float:left;"  name="delete" value="delete">
+                    </form>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+          </div>
+        </div>
+        <div class="row section">
+          <div class="container">
+            <h3 >Secrets Liked</h3>
+            <% current_user.secrets_liked.each do |item| %>
+             <p> <%= item.secret %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
