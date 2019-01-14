@@ -1,9 +1,88 @@
-<h2>Register New Account</h2>
-<form action="/users" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <p>Name: <input type="text" name="name" value=""></p>
-    <p>Email: <input type="text" name="email" value=""></p>
-    <p>Password: <input type="text" name="password" value=""></p>
-    <p>Password Confirmation: <input type="text" name="password_confirmation" value=""></p>
-    <input type="submit" name="" value="Register">
-</form>
+
+<div id="index-banner" class="parallax-container paraCont">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <!-- ghost-button -->
+      <a class="ghost-button" href="/sessions/new">Login</a>
+      <br><br>
+      <h1 class="header center white-text text-lighten-2 title" style="color:white;">Secrets</h1>
+      <div class="row center">
+        <h5 class="header col s12 light title2">Tell us your Secret</h5>
+        <h6 class="header col s12 light title2">All secrets are anonymous</h6>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <div class="parallax"> <img src="/blurCity.jpg" alt="Unsplashed background img 1"> </div>
+</div>
+<!-- Begin Login Registation -->
+<div class="container">
+  <div class="row section">
+    <!-- <div class="col l6 s12"> -->
+    <h2>Register New Account</h2>
+    <ul>
+    <% if flash[:errors] %>
+        <% flash[:errors].each do |item| %>
+              <li><%= item %></li>
+            </ul>
+        <% end %>
+    <% end %>
+    <form action="/users" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <p>Name: <input type="text" name="name" value=""></p>
+        <p>Email: <input type="text" name="email" value=""></p>
+        <p>Password: <input type="text" name="password" value=""></p>
+        <p>Password Confirmation: <input type="text" name="password_confirmation" value=""></p><br>
+        <input type="submit" class="ghost-button" style="float:left;" name="" value="Register">
+    </form>
+  </div>
+</div>
+<!-- End Login Registration -->
+<div class="container">
+  <div class="section">
+
+    <!--   Icon Section   -->
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+          <h5 class="center">Funny</h5>
+
+          <p class="light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum.</p>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+          <h5 class="center">Shocking</h5>
+
+          <p class="light">Lorem Ipsum it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+          <h5 class="center">Entertaining</h5>
+
+          <p class="light">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 center">
+  </div>
+</div>
+<footer class="page-footer teal">
+  <div class="container footcont">
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    Made by Jae Park
+    </div>
+  </div>
+</footer>

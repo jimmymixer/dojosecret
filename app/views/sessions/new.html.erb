@@ -1,11 +1,21 @@
-<h1>Welcome to Secrets</h1>
-<h2>Login</h2>
+<div class="row section">
+    <div class="container">
+        <h1 class="header center black-text text-lighten-2 title">Secrets</h1>
+        <h2>Login</h2><br>
+        <!-- fix this flash error!!!!! -->
+        <% if flash[:err] %>
+          <p><%= flash[:err] %></p>
+        <% end %>
+        <!-- Login -->
+        <form action="/sessions" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <p>Email: <input type="text" name="email" value=""></p>
+            <p>Password: <input type="text" name="password" value=""></p><br>
+            <input class="ghost-button" style="float:left;" type="submit" name="" value="Login">
+        </form>
+        <br><br><br>
 
-<form action="/sessions" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <p>Email: <input type="text" name="email" value=""></p>
-    <p>Password: <input type="text" name="password" value=""></p>
-    <input type="submit" name="" value="Login">
-</form>
-<br>
-<p><a href="/users/new">Register New Account</a></p>
+        <p><a href="/users/new"><span style="color: black;">Don't have an account?</span> <br> Register New Account</a></p>
+
+    </div>
+</div>

@@ -1,3 +1,108 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.parallax-container {
+  height: 750px !important;
+}
+
+.title{
+  font-family: 'Dancing Script', cursive !important;
+  font-size: 200px !important;
+  color: white !important;
+}
+
+.title2{
+  font-family: 'Dancing Script', cursive !important;
+  color: white !important;
+  font-weight: 100 !important;
+  font-size: 50px;
+}
+
+.ghost-button {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  float: right;
+  margin: 20px;
+}
+
+.ghost-button2 {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  float: right;
+  margin: 20px;
+  background-color: black;
+}
+
+.ghost-button3 {
+  display: inline-block;
+  width: 100px;
+  padding: 8px;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  // float: right;
+  margin: 20px;
+  background-color: black;
+}
+
+.userIndex {
+  background-image: url(/blurCity.jpg);
+  padding: 0px;
+  margin: 0px;
+  margin-top: -30px;
+}
+
+.main {
+  color: white!important;
+  opacity: .80;
+  width: 70%;
+  height: 100%;
+  border: 2px solid black;
+  padding: 20px;
+  margin: auto;
+  background-color: white;
+  align: center;
+}
+
+.dashboard {
+  font-family: 'Dancing Script', cursive !important;
+  font-size:40px;
+  padding:0px;
+  margin:0px;
+  color: #111011;
+}
+
+.likes {
+  font-size: 12px;
+  font-style: italic;
+  margin-left:20px;
+  color:#039be5;
+}
+
+.mySecret {
+  color: #111011;
+}
+
+.textArea {
+  box-shadow: black;
+  border: outset 3px #039be5;
+}
+
+.sec-page-font-color{
+  color: black;
+}
+.secret-form{
+  color: black;
+}
